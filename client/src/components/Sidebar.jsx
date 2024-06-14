@@ -1,11 +1,12 @@
+/* eslint-disable quotes */
 import React, { useState, useContext } from "react";
 import {
   Button,
-  TextField,
   Grid,
   Typography,
   Container,
   Paper,
+  TextField,
 } from "@material-ui/core";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Assignment, Phone, PhoneDisabled } from "@material-ui/icons";
@@ -45,8 +46,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Sidebar = ({ children }) => {
-  const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } =
-    useContext(SocketContext);
+  const { leaveCall, callUser, callAccepted } = useContext(SocketContext);
+  const { me, name, setName, callEnded } = useContext(SocketContext);
   const [idToCall, setIdToCall] = useState("");
   const classes = useStyles();
 
